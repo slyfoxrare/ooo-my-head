@@ -1,4 +1,4 @@
 [build]
-  command = "gem update --system 3.3.22 && gem install bundler && git fetch --depth=1 && git checkout {GIT_REF}" # Ensure RubyGems >= 3.3.22
+  command = "gem update --system 3.3.22 && gem install bundler && bundle install && git fetch --depth=1 && git checkout {GIT_REF}" # Ensure RubyGems >= 3.3.22
   publish = "public"
   # ...existing code...
