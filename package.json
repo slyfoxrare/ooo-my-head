@@ -5,5 +5,8 @@
   "scripts": {
     "clear-cache": "npm cache clean --force",
     "update-rubygems": "gem update --system"
+  },
+  "dependencies": {
+    "missing-module-name": "^1.0.0"
   }
 }
