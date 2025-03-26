@@ -1,5 +1,9 @@
 {
   "engines": {
     "node": ">=16.0.0"
+  },
+  "scripts": {
+    "clear-cache": "npm cache clean --force",
+    "update-rubygems": "gem update --system"
   }
 }
