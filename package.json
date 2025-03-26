@@ -1,5 +1,8 @@
 {
   "engines": {
     "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "go": "1.19"
   }
 }
