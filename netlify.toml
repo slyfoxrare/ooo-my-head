@@ -1,0 +1,4 @@
+[build]
+  command = "git fetch --depth=1 && git checkout {GIT_REF}" # Ensure proper syntax
+  publish = "public"
+  # ...existing code...
