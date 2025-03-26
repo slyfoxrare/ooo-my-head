@@ -4,14 +4,14 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body {
+ body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #{{ site.data.template.color.secondary-dark }};
 }
 
 .text-muted {
-    color: #{{ site.data.template.color.muted }};
+    color: rgba(255, 255, 255, 0.67); /* White color with 67% opacity */
 }
 
 .text-primary {
@@ -62,7 +62,7 @@ h6 {
 }
 
 .bg-light-gray {
-    background-color: #f7f7f7;
+    background-color: #6D4C41;
 }
 
 .bg-darkest-gray {
@@ -115,7 +115,7 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-primary .badge {
     color: #{{ site.data.template.color.primary }};
-    background-color: #fff;
+    background-color: A1887F;
 }
 
 .btn-xl {
@@ -257,7 +257,7 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: #222;
+        background-color: #6D4C41;
     }
 
     .navbar-default.navbar-shrink .navbar-brand {
@@ -265,13 +265,27 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
+.header-bg-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%; /* Adjust width as needed */
+    height: 100%;
+    overflow: hidden; /* Prevent the image from leaving the box */
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; /* Ensure it stays behind other elements */
+}
+
 header {
-    text-align: center;
-    color: #fff;
+    position: relative; /* Ensure the container is positioned relative to the header */
+    text-align: left; /* Align text to the left */
+    color: #FFFFFF;
+    background-color: #6D4C41; /* Add background color */
     background-attachment: scroll;
-    background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
-    background-position: center center;
-    background-repeat: none;
+    background-position: right center; /* Shift image to the right */
+    background-repeat: no-repeat; /* Corrected from 'none' to 'no-repeat' */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -374,7 +388,7 @@ section h3.section-subheading {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
-    background: rgba(254,209,54,.9); /* Fallback when no plugin support */
+    background: #6D4C41; /* Fallback when no plugin support */
     background: rgba({{ site.data.template.color.primary | hex_to_rgb | join: ',' }}, .9);
 }
 
@@ -446,7 +460,7 @@ section h3.section-subheading {
     left: 40px;
     width: 2px;
     margin-left: -1.5px;
-    background-color: #f1f1f1;
+    background-color: #fa0000;
 }
 
 .timeline>li {
@@ -639,7 +653,7 @@ section h3.section-subheading {
 
 .team-member img {
     margin: 0 auto;
-    border: 7px solid #fff;
+    border: 7px solid #6D4C41;
 }
 
 .team-member h4 {
@@ -657,10 +671,12 @@ aside.clients img {
 }
 
 section#contact {
-    background-color: #222;
-    background-image: url('{{ site.baseurl }}/img/map-image.png');
+    background-color: #6D4C41;
     background-position: center;
     background-repeat: no-repeat;
+    /* Add the PNG image as part of the background */
+    background-image: url('img/map-image.png'); /* Adjust the path as needed */
+    background-size: cover;
 }
 
 section#contact .section-heading {
@@ -718,7 +734,7 @@ section#contact:-ms-input-placeholder {
 }
 
 section#contact .text-danger {
-    color: #e74c3c;
+    color: #ffffff;
 }
 
 footer {
@@ -753,7 +769,7 @@ ul.social-buttons li a {
     font-size: 20px;
     line-height: 40px;
     outline: 0;
-    color: #fff;
+    color: #ffffff;
     background-color: #222;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
@@ -771,77 +787,6 @@ ul.social-buttons li a:active {
 .btn.active,
 .btn:active:focus {
     outline: 0;
-}
-
-.portfolio-modal .modal-content {
-    padding: 100px 0;
-    min-height: 100%;
-    border: 0;
-    border-radius: 0;
-    text-align: center;
-    background-clip: border-box;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.portfolio-modal .modal-content h2 {
-    margin-bottom: 15px;
-    font-size: 3em;
-}
-
-.portfolio-modal .modal-content p {
-    margin-bottom: 30px;
-}
-
-.portfolio-modal .modal-content p.item-intro {
-    margin: 20px 0 30px;
-    font-family: {{ site.data.template.font.secondary }};
-    font-size: 16px;
-    font-style: italic;
-}
-
-.portfolio-modal .modal-content ul.list-inline {
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-.portfolio-modal .modal-content img {
-    margin-bottom: 30px;
-}
-
-.portfolio-modal .close-modal {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    width: 75px;
-    height: 75px;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.portfolio-modal .close-modal:hover {
-    opacity: .3;
-}
-
-.portfolio-modal .close-modal .lr {
-    z-index: 1051;
-    width: 1px;
-    height: 75px;
-    margin-left: 35px;
-    background-color: #222;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.portfolio-modal .close-modal .lr .rl {
-    z-index: 1052;
-    width: 1px;
-    height: 75px;
-    background-color: #222;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
 }
 
 ::-moz-selection {

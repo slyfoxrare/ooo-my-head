@@ -1,58 +1,77 @@
 <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">{{site.title}}</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+<nav class="navbar navbar-default navbar-fixed-top" style="font-family: 'Times New Roman', Times, serif;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">{{site.title}}</a>
         </div>
-        <!-- /.container-fluid -->
-    </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
-            </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#services">Services</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
         </div>
-    </header>
-<!--
-        {% for page in site.pages %}
-          {% if page.title %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
-        {% endfor %}
- -->
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
 
+<!-- Header -->
+<header style="font-family: 'Times New Roman', Times, serif; background: #6D4C41 url('img/pngwing.com.png') no-repeat center; background-size: 80%; height: 500px; color: white; padding: 10px 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: flex-start; height: 100%;">
+        <div class="intro-text" style="text-align: left; transform: scale(0.8);">
+            <div class="intro-heading" style="font-style: normal; font-family: 'Oswald', sans-serif;">Shaping Your <br> Digital Future </div>
+            <div class="intro-lead-in" style="font-style: normal;">Unlock Unleashed Potential <br> tailored to your needs</div>
+            <a href="mailto:contact@devwyre.com" class="page-scroll btn btn-xl">Contact</a>
+        </div>
+    </div>
+</header>
+
+<style>
+    @media (max-width: 768px) {
+        .navbar-header, .navbar-collapse, .intro-text {
+            text-align: center !important;
+        }
+        header {
+            background-image: none; /* Remove only the PNG image on mobile */
+        }
+        .intro-text {
+            transform: scale(0.7);
+        }
+        .desktop-only {
+            display: none !important;
+        }
+    }
+    @media (min-width: 769px) {
+        /* Removed styles related to .image-container */
+    }
+
+    @media (max-width: 1200px) and (min-width: 769px) {
+        /* Removed styles related to .image-container */
+    }
+
+    @media (max-width: 768px) {
+        /* Removed styles related to .image-container */
+    }
+</style>

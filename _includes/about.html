@@ -1,80 +1,64 @@
 <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
+<section id="about" class="bg-light-gray" style="padding: 20px 0;"> <!-- Reduced padding -->
+    <div class="container" style="max-width: 1100px; margin: 10px auto;"> <!-- Reduced max-width and margin -->
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading" style="font-size: 1.8em; margin-bottom: 5px;">OUR STORY</h2> <!-- Reduced margin-bottom -->
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="about-box" style="border: 20px solid #6D4C41; margin: 0 auto 5px auto; font-size: 0.85em; padding: 10px;"> <!-- Reduced margin -->
+                    <p class="text-muted" style="line-height: 1.4;"> <!-- Reduced line height -->
+                        We started small but mighty with just a handful of dreamers with big ideas and even bigger ambitions. With limited resources but boundless passion, we set out to make a difference in the digital world. Each of us brought unique skills and a shared belief that technology could transform businesses for the better.
+                        Those early days were fueled by late nights, bold ideas, and the unwavering belief that even the smallest team could create something extreme. We knew that success wasn’t about size; it was about vision, dedication, and the courage to take the first step. Today we stand as proof that big ideas, no matter how small the start, can grow into something powerful. VENDAVAULT
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+        <!-- Team Members Section -->
+        <div class="col-lg-12 text-left" style="margin-top: 10px;"> <!-- Reduced margin-top -->
+            <h2 class="section-heading" style="font-size: 1.3em; margin-bottom: 5px;">Board of Directors</h2> <!-- Reduced margin-bottom -->
+            <div class="row">
+                <div class="team-members-container d-flex flex-wrap"> <!-- Removed justify-content-center -->
+                    {% for member in site.people %}
+                    <div class="col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 10px;"> <!-- Reduced margin-bottom -->
+                        <div class="team-member"> <!-- Removed text-center -->
+                            <img src="img/team/{{ member.pic }}.jpg" class="img-responsive img-circle" alt="" style="width: 120px; height: 120px; object-fit: cover;"> <!-- Adjusted image size -->
+                            <h4 style="font-size: 1em; margin-top: 5px;">{{ member.name }}</h4> <!-- Reduced margin-top -->
+                            <p class="text-muted" style="font-size: 0.85em;">{{ member.position }}</p> <!-- Reduced font size -->
+                            <ul class="list-inline social-buttons">
+                                {% for network in member.social %}
+                                <li>
+                                    <a href="{{ network.url }}">
+                                        <i class="fa fa-{{ network.title }}"></i>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom: 10px;"></div> <!-- Reduced margin-bottom -->
+    </div>
+</section>
+
+<style>
+    @media (max-width: 768px) {
+        .team-members-container {
+            justify-content: center !important; /* Center align team members */
+        }
+        .team-member {
+            text-align: center !important; /* Ensure text inside team member is centered */
+            margin: 0 auto !important; /* Center the team member container */
+        }
+    }
+</style>
+
+
+
+
+
